@@ -16,7 +16,7 @@
 <div class="car-grid">
     @foreach($cars as $car)
         <div class="car-card">
-            <a href="{{ route('rentals.update', $car->car_id) }}" style="text-decoration: none; color: inherit;">
+            <a href="{{ route('rentals.edit', $car->car_id) }}" style="text-decoration: none; color: inherit;">
                 @if($car->photos->count() > 0)
                     <img src="{{ asset('storage/' . $car->photos->first()->photos_url) }}" alt="{{ $car->brand->brand_name }}">
                 @else

@@ -196,10 +196,7 @@
 
   <div class="overlay">
     <div class="top-bar">
-    <div class="menu" id="menuButton">
-        <i class="fas fa-bars" id="menuIcon"></i>
-        <span>Menu</span>
-      </div>
+
 
       <div class="logo-wrapper">
         <img src="{{ asset('assets/Logo_White.png') }}" alt="G3TWAY Logo" />
@@ -213,12 +210,7 @@
     </div>
   </div>
 
-  <div class="sidebar-menu" id="sidebarMenu">
-    <a href="{{ route('cars.index') }}">View All Cars</a>
-    <a href="{{ route('rentals.index') }}">Manage Rentals</a>
-    <a href="{{ route('reviews.index') }}">Reviews</a>
-    <a href="{{ route('profile.show') }}">Profile</a>
-  </div>
+
   <script>
     const menuButton = document.getElementById('menuButton');
     const sidebarMenu = document.getElementById('sidebarMenu');

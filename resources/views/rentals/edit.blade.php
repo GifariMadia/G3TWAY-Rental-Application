@@ -259,7 +259,7 @@
     </div>
 
     <main>
-<form action="{{ route('cars.update', $car->car_id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('rentals.update', $car->car_id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT') <!-- This ensures that the form uses PUT for updating the car -->
 

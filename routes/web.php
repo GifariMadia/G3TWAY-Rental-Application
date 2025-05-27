@@ -32,24 +32,17 @@ Route::delete('/profile/{id}', [UserController::class, 'destroy'])->name('profil
 // =======================
 // Rute Mobil
 // =======================
-Route::prefix('cars')->group(function () {
-    // Menampilkan semua mobil
-    Route::get('/booking', function () {
-        return view('cars.booking');
-    })->name('cars.booking');
-});
+
 // Rute untuk melihat detail mobil
-Route::get('/cars/{car_id}', [RentalController::class, 'show'])->name('cars.detail');
+Route::get('/cars/{car_id}', [CarController::class, 'show'])->name('cars.detail');
 
 
 // =======================
 // Rute Sewa Mobil
 // =======================
-Route::view('/rentals', 'rentals.index')->name('rentals.index');
-Route::view('/rentals/update', 'rentals.update')->name('rentals.update');
 Route::view('/rentals/create', 'rentals.create')->name('rentals.create');
-Route::post('/rentals/create', [CarController::class, 'store'])->name('cars.store'); // Menambahkan data mobil baru
-Route::get('/cars', [RentalController::class, 'showAllCars'])->name('cars.index'); // Menampilkan daftar mobil dengan relasi
+Route::post('/rentals/create', [RentalController::class, 'store'])->name('cars.store'); // Menambahkan data mobil baru
+Route::get('/cars', [CarController::class, 'showAllCars'])->name('cars.index'); // Menampilkan daftar mobil dengan relasi
 
 // =======================
 // Rute Sidebar Menu
@@ -58,8 +51,11 @@ Route::view('/reviews', 'reviews.index')->name('reviews.index');
 Route::view('/reviews/create', 'reviews.create')->name('reviews.create');
 Route::post('/review/create', [CarController::class, 'update'])->name('reviews.store'); // Update review mobil
 
-Route::get('/rentals', [CarController::class, 'showCarsForRentals'])->name('rentals.index');
-Route::get('/rentals/{car_id}/update', [RentalController::class, 'update'])->name('rentals.update');
+Route::get('/rentals', [RentalController::class, 'index'])->name('rentals.index');
+Route::get('/rentals/{car_id}/edit', [RentalController::class, 'edit'])->name('rentals.edit');  // Tampilkan form edit rental
+Route::put('/rentals/{car_id}', [RentalController::class, 'update'])->name('rentals.update');
+Route::delete('/rentals/{car_id}', [RentalController::class, 'destroy'])->name('rentals.destroy'); // Hapus rental
+ // Proses update rental
 
 // =======================
 // Tes Koneksi Database (Opsional)
