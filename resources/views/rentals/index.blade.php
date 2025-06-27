@@ -161,7 +161,6 @@
       text-align: center;
     }
 
-    /* Add new rental card style */
     .add-card {
       background: #a4a4a4;
       border-radius: 16px;
