@@ -261,7 +261,7 @@
     <main>
 <form action="{{ route('rentals.update', $car->car_id) }}" method="POST" enctype="multipart/form-data">
     @csrf
-    @method('PUT') <!-- This ensures that the form uses PUT for updating the car -->
+    @method('PUT')
 
     <div>
         <label for="car_type">Tipe Mobil</label>
@@ -282,7 +282,6 @@
     <div>
         <label for="stnk">Dokumen STNK (PDF)</label>
         <input type="file" id="stnk" name="stnk" accept=".pdf">
-        <!-- STNK is optional for update, so it's not required here -->
     </div>
     <div>
         <label for="photos_url">Foto Mobil (Maksimal 3)</label>
@@ -291,7 +290,6 @@
     <button type="submit" class="post-button">Update</button>
 </form>
 
-<!-- Delete Form -->
 <form action="{{ route('rentals.destroy', $car->car_id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus mobil ini?');">
     @csrf
     @method('DELETE')
