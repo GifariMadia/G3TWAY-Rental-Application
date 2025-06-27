@@ -27,7 +27,6 @@
         </div>
     @endforeach
 
-    <!-- Add new rental -->
     <a href="{{ route('rentals.create') }}" class="add-card" style="text-decoration: none; color: inherit;">
         <i class="fas fa-plus add-icon"></i>
     </a>
